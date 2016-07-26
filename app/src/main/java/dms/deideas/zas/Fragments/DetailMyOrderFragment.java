@@ -62,8 +62,15 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
     private TextView txtRestaurantWhite;
     private TextView txtRestaurantRed;
 
-    private ImageView icRecogido;
-    private ImageView icFinished;
+    private ImageView icRecogidoWhite;
+    private ImageView icRecogidoRed;
+    private TextView txtRecogidoWhite;
+    private TextView txtRecogidoRed;
+
+    private ImageView icFinishedWhite;
+    private ImageView icFinishedRed;
+    private TextView txtFinishedWhite;
+    private TextView txtFinishedRed;
 
 
     public DetailMyOrderFragment() {
@@ -131,8 +138,17 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
         txtRestaurantWhite = (TextView) view.findViewById(R.id.txtRestaurantWhite);
         txtRestaurantRed = (TextView) view.findViewById(R.id.txtRestaurantRed);
 
-        icRecogido = (ImageView) view.findViewById(R.id.icRecogido);
-        icFinished = (ImageView) view.findViewById(R.id.icFinished);
+        icRecogidoWhite = (ImageView) view.findViewById(R.id.icRecogidoWhite);
+        icRecogidoRed = (ImageView) view.findViewById(R.id.icRecogidoRed);
+        txtRecogidoWhite = (TextView) view.findViewById(R.id.txtRecogidoWhite);
+        txtRecogidoRed = (TextView) view.findViewById(R.id.txtRecogidoRed);
+
+
+        icFinishedWhite = (ImageView) view.findViewById(R.id.icFinishedWhite);
+        icFinishedRed = (ImageView) view.findViewById(R.id.icFinishedRed);
+        txtFinishedWhite = (TextView) view.findViewById(R.id.txtFinishedWhite);
+        txtFinishedRed = (TextView) view.findViewById(R.id.txtFinishedRed);
+
     }
 
     private void setOnClickListener() {
@@ -190,14 +206,17 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
                 txtRestaurantRed.setVisibility(View.GONE);
                 icRestaurantWhite.setVisibility(View.VISIBLE);
                 txtRestaurantWhite.setVisibility(View.VISIBLE);
-                //icRestaurant.setImageDrawable(getResources().getDrawable(R.drawable.ic_in_restaurant));
 
 
                 break;
             case Constants.ORDER_STATUS_driver_on_road:
                 accept.setText(getResources().getString(R.string.order_delivered_status));
                 questionStatus = getResources().getString(R.string.order_finished);
-                icRecogido.setImageDrawable(getResources().getDrawable(R.drawable.ic_recogido_pink_24dp));
+
+                icRecogidoRed.setVisibility(View.GONE);
+                txtRecogidoRed.setVisibility(View.GONE);
+                icRecogidoWhite.setVisibility(View.VISIBLE);
+                txtRecogidoWhite.setVisibility(View.VISIBLE);
 
                 //icFinished.setImageDrawable(getResources().getDrawable(R.drawable.ic_finalizado));
 

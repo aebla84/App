@@ -164,8 +164,8 @@
 
                 <ImageView
                     android:id="@+id/icRecogidoWhite"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0.25"
                     android:gravity="center_vertical"
@@ -188,8 +188,8 @@
 
                 <ImageView
                     android:id="@+id/icRecogidoRed"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0.25"
                     android:gravity="center_vertical"
@@ -216,8 +216,8 @@
 
                 <ImageView
                     android:id="@+id/icFinishedWhite"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0.25"
                     android:paddingLeft="@dimen/order_menu_paddingLeft"
