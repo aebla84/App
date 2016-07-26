@@ -71,50 +71,108 @@
             android:paddingLeft="@dimen/order_menu_paddingLeft"
             android:paddingTop="@dimen/order_menu_paddingTop">
 
-            <TextView
-                style="@style/thirdTitleAvenirFont_Rose"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="0.25"
-                android:drawableTop="@drawable/ic_encamino_24dp"
-                android:paddingLeft="@dimen/order_menu_paddingLeft"
-                android:paddingRight="@dimen/order_menu_paddingRight"
-                android:text="@string/income" />
+                android:background="#f2dede"
+                android:orientation="vertical">
 
-            <TextView
-                style="@style/thirdTitleAvenirFont_Rose"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="0.25"
-                android:drawableTop="@drawable/ic_in_restaurant"
-                android:paddingLeft="@dimen/order_menu_paddingLeft"
-                android:paddingRight="@dimen/order_menu_paddingRight"
-                android:text="@string/in_restaurant" />
+                <ImageView
+                    style="@style/thirdTitleAvenirFont_Rose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.25"
+                    android:background="#f2dede"
+                    android:paddingLeft="@dimen/order_menu_paddingLeft"
+                    android:paddingRight="@dimen/order_menu_paddingRight"
+                    android:src="@drawable/ic_encamino_24dp" />
 
-            <TextView
-                style="@style/thirdTitleAvenirFont_Rose"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="0.25"
-                android:drawableTop="@drawable/ic_recogido_pink_24dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/order_menu_paddingLeft"
-                android:paddingRight="@dimen/order_menu_paddingRight"
-                android:text="@string/collected" />
+                <TextView
+                    style="@style/thirdTitleAvenirFont_Rose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/income"
+                    android:textAlignment="center" />
+            </LinearLayout>
 
-            <TextView
-                style="@style/thirdTitleAvenirFont_Rose"
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="0.25"
-                android:drawableTop="@drawable/ic_ok_pink_24dp"
-                android:paddingLeft="@dimen/order_menu_paddingLeft"
-                android:paddingRight="@dimen/order_menu_paddingRight"
-                android:text="@string/finished" />
+                android:background="#f2dede"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/icRestaurant"
+                    style="@style/thirdTitleAvenirFont_Rose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.25"
+                    android:paddingLeft="@dimen/order_menu_paddingLeft"
+                    android:paddingRight="@dimen/order_menu_paddingRight"
+                    android:src="@drawable/ic_enrestauranteblanco_48"
+                    android:text="@string/in_restaurant" />
+
+                <TextView
+                    style="@style/thirdTitleAvenirFont_Rose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/in_restaurant"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#f2dede"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/icRecogido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.25"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/order_menu_paddingLeft"
+                    android:paddingRight="@dimen/order_menu_paddingRight"
+                    android:src="@drawable/ic_recogidoblanco_48dp" />
+
+                <TextView
+                    style="@style/thirdTitleAvenirFont_Rose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/collected"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#f2dede"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/icFinished"
+                    android:layout_width="wrap_content"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.25"
+                    android:paddingLeft="@dimen/order_menu_paddingLeft"
+                    android:paddingRight="@dimen/order_menu_paddingRight"
+                    android:src="@drawable/ic_finalizadoblanco_48dp" />
+
+                <TextView
+                    style="@style/thirdTitleAvenirFont_Rose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/finished"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
 
         </LinearLayout>
     </LinearLayout>
@@ -317,17 +375,19 @@
                     android:paddingRight="@dimen/detail_paddingRight"
                     android:paddingTop="@dimen/detail_paddingTop"
                     android:text="@string/customer_observation" />
+
                 <ImageButton
+                    android:id="@+id/imgbtn_obs_client"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp"
-                    android:id="@+id/imgbtn_obs_client"
-                    android:background="@color/colorAccent"
-                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_centerVertical="true"
+                    android:background="@color/colorAccent"
+                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
 
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/blockExtra3"
                 android:layout_width="match_parent"
@@ -335,6 +395,7 @@
                 android:background="@color/white"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/card_paddingBottom" />
+
             <RelativeLayout
                 android:id="@+id/notes"
                 android:layout_width="match_parent"
@@ -357,14 +418,14 @@
                     android:text="@string/customer_incident" />
 
                 <ImageButton
+                    android:id="@+id/imgbtn_problems_client"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp"
-                    android:id="@+id/imgbtn_problems_client"
-                    android:background="@color/colorAccent"
-                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_centerVertical="true"
+                    android:background="@color/colorAccent"
+                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
 
             </RelativeLayout>
 

@@ -29,7 +29,7 @@
     <dimen name="order_menu_paddingBottom">5dp</dimen>
     <dimen name="order_menu_paddingTop">5dp</dimen>
     <dimen name="order_menu_line_spacing">25dp</dimen>
-    <dimen name="order_menu_paddingLeft">10dp</dimen>
+    <dimen name="order_menu_paddingLeft">5dp</dimen>
     <dimen name="order_menu_paddingRight">10dp</dimen>
 
     <!-- Padding detail historical fragment -->

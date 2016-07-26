@@ -56,6 +56,10 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
 
     private String questionStatus = "";
 
+    private ImageView icRestaurant;
+    private ImageView icRecogido;
+    private ImageView icFinished;
+
 
     public DetailMyOrderFragment() {
 
@@ -99,7 +103,7 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
         acceptState();
     }
 
-    private void findViewById(View view){
+    private void findViewById(View view) {
         //Initiate Views
         id_order = (TextView) view.findViewById(R.id.idorder);
         restaurant_name = (TextView) view.findViewById(R.id.restaurant_name);
@@ -116,9 +120,12 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
         accept = (Button) view.findViewById(R.id.accept);
         cancel = (ImageButton) view.findViewById(R.id.cancel);
         btnincidencia = (ImageButton) view.findViewById(R.id.btnincidencia);
+        icRestaurant = (ImageView) view.findViewById(R.id.icRestaurant);
+        icRecogido = (ImageView) view.findViewById(R.id.icRecogido);
+        icFinished = (ImageView) view.findViewById(R.id.icFinished);
     }
 
-    private void setOnClickListener(){
+    private void setOnClickListener() {
         restaurant_direction.setOnClickListener(this);
         phone_restaurant.setOnClickListener(this);
         customer_direction.setOnClickListener(this);
@@ -130,7 +137,7 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
         btnincidencia.setOnClickListener(this);
     }
 
-    private void setVisibility(){
+    private void setVisibility() {
         String status = order.getOrderstatus();
         switch (status) {
             case Constants.ORDER_STATUS_driver_has_accepted:
@@ -153,6 +160,7 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
                 break;
         }
     }
+
     private void acceptState() {
 
         String status = order.getOrderstatus();
@@ -160,14 +168,20 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
             case Constants.ORDER_STATUS_driver_has_accepted:
                 accept.setText(getResources().getString(R.string.driver_in_rest_status));
                 questionStatus = getResources().getString(R.string.in_rest);
+                icRestaurant.setImageDrawable(getResources().getDrawable(R.drawable.ic_in_restaurant));
+
                 break;
             case Constants.ORDER_STATUS_driver_in_rest:
                 accept.setText(getResources().getString(R.string.driver_on_road_status));
                 questionStatus = getResources().getString(R.string.order_collected);
+                icRecogido.setImageDrawable(getResources().getDrawable(R.drawable.ic_recogido_pink_24dp));
+
                 break;
             case Constants.ORDER_STATUS_driver_on_road:
                 accept.setText(getResources().getString(R.string.order_delivered_status));
                 questionStatus = getResources().getString(R.string.order_finished);
+                icFinished.setImageDrawable(getResources().getDrawable(R.drawable.ic_finalizado));
+
                 break;
 
             default:
@@ -242,7 +256,7 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
             startActivity(intent);
         } else if (v == comments) {
             String title = getResources().getString(R.string.comments);
-            OrderNoteFragment fragment = OrderNoteFragment.newInstance(title,idOrder);
+            OrderNoteFragment fragment = OrderNoteFragment.newInstance(title, idOrder);
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager
                     .beginTransaction()
@@ -251,10 +265,9 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
                     .commit();
 
             getActivity().setTitle(title);
-        }
-        else if (v == incidents) {
+        } else if (v == incidents) {
             String title = getResources().getString(R.string.incidents);
-            OrderIncidenciasFragment fragment = OrderIncidenciasFragment.newInstance(title,order);
+            OrderIncidenciasFragment fragment = OrderIncidenciasFragment.newInstance(title, order);
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager
                     .beginTransaction()
@@ -263,7 +276,7 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
                     .commit();
 
             getActivity().setTitle(title);
-        }else if (v == accept) {
+        } else if (v == accept) {
             DialogFragment dialogFragment = DialogFragment.newInstance(questionStatus, order);
             dialogFragment.show(getFragmentManager(), "dialog");
         } else if (v == cancel) {
@@ -280,10 +293,9 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
 
             getActivity().setTitle(title);
 
-        }else if(v== btnincidencia)
-        {
+        } else if (v == btnincidencia) {
             String title = getResources().getString(R.string.incidents);
-            OrderIncidenciasFragment fragment = OrderIncidenciasFragment.newInstance(title,order);
+            OrderIncidenciasFragment fragment = OrderIncidenciasFragment.newInstance(title, order);
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager
                     .beginTransaction()
