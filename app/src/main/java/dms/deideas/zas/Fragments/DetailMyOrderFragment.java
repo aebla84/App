@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -56,7 +57,11 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
 
     private String questionStatus = "";
 
-    private ImageView icRestaurant;
+    private ImageView icRestaurantWhite;
+    private ImageView icRestaurantRed;
+    private TextView txtRestaurantWhite;
+    private TextView txtRestaurantRed;
+
     private ImageView icRecogido;
     private ImageView icFinished;
 
@@ -120,7 +125,12 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
         accept = (Button) view.findViewById(R.id.accept);
         cancel = (ImageButton) view.findViewById(R.id.cancel);
         btnincidencia = (ImageButton) view.findViewById(R.id.btnincidencia);
-        icRestaurant = (ImageView) view.findViewById(R.id.icRestaurant);
+
+        icRestaurantWhite = (ImageView) view.findViewById(R.id.icRestaurantWhite);
+        icRestaurantRed = (ImageView) view.findViewById(R.id.icRestaurantRed);
+        txtRestaurantWhite = (TextView) view.findViewById(R.id.txtRestaurantWhite);
+        txtRestaurantRed = (TextView) view.findViewById(R.id.txtRestaurantRed);
+
         icRecogido = (ImageView) view.findViewById(R.id.icRecogido);
         icFinished = (ImageView) view.findViewById(R.id.icFinished);
     }
@@ -164,28 +174,36 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
     private void acceptState() {
 
         String status = order.getOrderstatus();
+
+
         switch (status) {
-            case Constants.ORDER_STATUS_driver_has_accepted:
+            case Constants.ORDER_STATUS_driver_has_accepted :
                 accept.setText(getResources().getString(R.string.driver_in_rest_status));
                 questionStatus = getResources().getString(R.string.in_rest);
-                icRestaurant.setImageDrawable(getResources().getDrawable(R.drawable.ic_in_restaurant));
 
                 break;
             case Constants.ORDER_STATUS_driver_in_rest:
                 accept.setText(getResources().getString(R.string.driver_on_road_status));
                 questionStatus = getResources().getString(R.string.order_collected);
-                icRecogido.setImageDrawable(getResources().getDrawable(R.drawable.ic_recogido_pink_24dp));
+
+                icRestaurantRed.setVisibility(View.GONE);
+                txtRestaurantRed.setVisibility(View.GONE);
+                icRestaurantWhite.setVisibility(View.VISIBLE);
+                txtRestaurantWhite.setVisibility(View.VISIBLE);
+                //icRestaurant.setImageDrawable(getResources().getDrawable(R.drawable.ic_in_restaurant));
+
 
                 break;
             case Constants.ORDER_STATUS_driver_on_road:
                 accept.setText(getResources().getString(R.string.order_delivered_status));
                 questionStatus = getResources().getString(R.string.order_finished);
-                icFinished.setImageDrawable(getResources().getDrawable(R.drawable.ic_finalizado));
+                icRecogido.setImageDrawable(getResources().getDrawable(R.drawable.ic_recogido_pink_24dp));
+
+                //icFinished.setImageDrawable(getResources().getDrawable(R.drawable.ic_finalizado));
 
                 break;
 
             default:
-                status = status;
                 break;
         }
     }
@@ -277,6 +295,7 @@ public class DetailMyOrderFragment extends Fragment implements View.OnClickListe
 
             getActivity().setTitle(title);
         } else if (v == accept) {
+            Toast.makeText(getContext(), "PULSADO:"+questionStatus, Toast.LENGTH_SHORT).show();
             DialogFragment dialogFragment = DialogFragment.newInstance(questionStatus, order);
             dialogFragment.show(getFragmentManager(), "dialog");
         } else if (v == cancel) {

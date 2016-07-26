@@ -79,97 +79,185 @@
 
                 <ImageView
                     style="@style/thirdTitleAvenirFont_Rose"
-                    android:layout_width="wrap_content"
-                    android:layout_height="96dp"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0.25"
-                    android:background="#f2dede"
+                    android:background="@color/colorAccent"
                     android:paddingLeft="@dimen/order_menu_paddingLeft"
                     android:paddingRight="@dimen/order_menu_paddingRight"
-                    android:src="@drawable/ic_encamino_24dp" />
+                    android:src="@drawable/ic_encaminoblanco_48dp" />
 
                 <TextView
                     style="@style/thirdTitleAvenirFont_Rose"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
                     android:text="@string/income"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
             </LinearLayout>
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#f2dede"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/icRestaurant"
+                    android:id="@+id/icRestaurantWhite"
                     style="@style/thirdTitleAvenirFont_Rose"
-                    android:layout_width="wrap_content"
-                    android:layout_height="95dp"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0.25"
+                    android:background="@color/colorAccent"
                     android:paddingLeft="@dimen/order_menu_paddingLeft"
                     android:paddingRight="@dimen/order_menu_paddingRight"
                     android:src="@drawable/ic_enrestauranteblanco_48"
-                    android:text="@string/in_restaurant" />
+                    android:text="@string/in_restaurant"
+                    android:visibility="gone" />
 
                 <TextView
+                    android:id="@+id/txtRestaurantWhite"
                     style="@style/thirdTitleAvenirFont_Rose"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
                     android:text="@string/in_restaurant"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/icRestaurantRed"
+                    style="@style/thirdTitleAvenirFont_Rose"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.25"
+                    android:background="@color/white"
+                    android:paddingLeft="@dimen/order_menu_paddingLeft"
+                    android:paddingRight="@dimen/order_menu_paddingRight"
+                    android:src="@drawable/ic_in_restaurant"
+                    android:text="@string/in_restaurant"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/txtRestaurantRed"
+                    style="@style/thirdTitleAvenirFont_Rose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="@string/in_restaurant"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:visibility="visible" />
+
             </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#f2dede"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/icRecogido"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/icRecogidoWhite"
+                    android:layout_width="96dp"
                     android:layout_height="96dp"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0.25"
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/order_menu_paddingLeft"
                     android:paddingRight="@dimen/order_menu_paddingRight"
-                    android:src="@drawable/ic_recogidoblanco_48dp" />
+                    android:background="@color/colorAccent"
+                    android:src="@drawable/ic_recogidoblanco_48dp"
+                    android:visibility="gone" />
 
                 <TextView
+                    android:id="@+id/txtRecogidoWhite"
+                    style="@style/thirdTitleAvenirFont_Rose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:text="@string/collected"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/icRecogidoRed"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.25"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/order_menu_paddingLeft"
+                    android:paddingRight="@dimen/order_menu_paddingRight"
+                    android:src="@drawable/ic_recogido_pink_24dp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/txtRecogidoRed"
                     style="@style/thirdTitleAvenirFont_Rose"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/collected"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:visibility="visible" />
             </LinearLayout>
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#f2dede"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/icFinished"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/icFinishedWhite"
+                    android:layout_width="96dp"
                     android:layout_height="96dp"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0.25"
                     android:paddingLeft="@dimen/order_menu_paddingLeft"
                     android:paddingRight="@dimen/order_menu_paddingRight"
+                    android:background="@color/colorAccent"
+                    android:visibility="gone"
                     android:src="@drawable/ic_finalizadoblanco_48dp" />
 
                 <TextView
+                    android:id="@+id/txtFinishedWhite"
                     style="@style/thirdTitleAvenirFont_Rose"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/finished"
+                    android:background="@color/colorAccent"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:textAlignment="center" />
+
+                <ImageView
+                    android:id="@+id/icFinishedRed"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.25"
+                    android:paddingLeft="@dimen/order_menu_paddingLeft"
+                    android:paddingRight="@dimen/order_menu_paddingRight"
+                    android:background="@color/white"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_finalizado" />
+
+                <TextView
+                    android:id="@+id/txtFinishedRed"
+                    style="@style/thirdTitleAvenirFont_Rose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/finished"
+                    android:background="@color/white"
+                    android:visibility="visible"
+                    android:textColor="@color/colorAccent"
                     android:textAlignment="center" />
             </LinearLayout>
 
