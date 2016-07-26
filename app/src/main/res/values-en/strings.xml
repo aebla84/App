@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ZAS</string>
+    <string name="direction_restaurant">Direction</string>
+    <string name="historical_item">Historical</string>
+    <string name="home_item">Home</string>
+    <string name="hour_of_order">Hour of order</string>
+    <string name="logout_item">Logout</string>
+    <string name="my_orders_item">My Orders</string>
+    <string name="name">Jordi Ramos Puigjané</string>
+    <string name="orders_item">Orders</string>
+    <string name="profile_item">Profile</string>
+    <string name="restaurant_name">Restaurant</string>
+    <string name="state_of_order">State of Order</string>
+    <string name="title_section_config">Settings</string>
+    <string name="time_left_of_order">Time Left</string>
+    <string name="email">jordirp81@gmail.com</string>
+</resources>

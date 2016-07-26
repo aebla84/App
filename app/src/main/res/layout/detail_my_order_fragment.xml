@@ -1,0 +1,437 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/detail_paddingBottom"
+    android:paddingTop="@dimen/detail_paddingTop"
+    tools:cardCornerRadius="4dp"
+    tools:cardElevation="4dp"
+    tools:cardUseCompatPadding="true"
+    tools:context=".Activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/order_menu_paddingBottom"
+        android:paddingLeft="@dimen/order_menu_paddingLeft"
+        android:paddingRight="@dimen/order_menu_paddingRight"
+        android:paddingTop="@dimen/order_menu_paddingTop">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/detail_paddingLeft"
+            android:paddingRight="@dimen/detail_paddingRight">
+
+            <TextView
+                android:id="@+id/txtOrder"
+                style="@style/titleAvenirFont_Rose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/order_text" />
+
+            <TextView
+                android:id="@+id/idorder"
+                style="@style/titleAvenirFont_Rose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/txtOrder"
+                android:layout_toRightOf="@+id/txtOrder" />
+
+            <TextView
+                android:id="@+id/state_of_payment"
+                style="@style/secondTitleAvenirFont_Rose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/state_of_payment" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/state_of_payment"
+                android:layout_toStartOf="@+id/state_of_payment"
+                android:src="@drawable/ic_symbol_euro" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/order_menu_paddingBottom"
+            android:paddingLeft="@dimen/order_menu_paddingLeft"
+            android:paddingTop="@dimen/order_menu_paddingTop">
+
+            <TextView
+                style="@style/thirdTitleAvenirFont_Rose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.25"
+                android:drawableTop="@drawable/ic_encamino_24dp"
+                android:paddingLeft="@dimen/order_menu_paddingLeft"
+                android:paddingRight="@dimen/order_menu_paddingRight"
+                android:text="@string/income" />
+
+            <TextView
+                style="@style/thirdTitleAvenirFont_Rose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.25"
+                android:drawableTop="@drawable/ic_in_restaurant"
+                android:paddingLeft="@dimen/order_menu_paddingLeft"
+                android:paddingRight="@dimen/order_menu_paddingRight"
+                android:text="@string/in_restaurant" />
+
+            <TextView
+                style="@style/thirdTitleAvenirFont_Rose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.25"
+                android:drawableTop="@drawable/ic_recogido_pink_24dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/order_menu_paddingLeft"
+                android:paddingRight="@dimen/order_menu_paddingRight"
+                android:text="@string/collected" />
+
+            <TextView
+                style="@style/thirdTitleAvenirFont_Rose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.25"
+                android:drawableTop="@drawable/ic_ok_pink_24dp"
+                android:paddingLeft="@dimen/order_menu_paddingLeft"
+                android:paddingRight="@dimen/order_menu_paddingRight"
+                android:text="@string/finished" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/detail_paddingLeft"
+                android:paddingRight="@dimen/detail_paddingRight">
+
+                <ImageView
+                    android:id="@+id/imgRestaurant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_pedidos_iconorestaurante" />
+
+                <TextView
+                    android:id="@+id/restaurant_name"
+                    style="@style/titleAvenirFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imgRestaurant"
+                    android:text="@string/restaurant_name" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/time_left_of_order"
+                    android:src="@drawable/ic_pedidos_horarecogida" />
+
+                <TextView
+                    android:id="@+id/time_left_of_order"
+                    style="@style/secondTitleAvenirFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:background="@color/colorAccent"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/detail_paddingLeft"
+                android:paddingRight="@dimen/detail_paddingRight">
+
+
+                <TextView
+                    android:id="@+id/restaurant_direction"
+                    style="@style/secondmapFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginStart="39dp"
+                    android:paddingLeft="@dimen/detail_paddingLeft"
+                    android:paddingRight="@dimen/detail_paddingLeft"
+                    android:text="@string/direction_restaurant" />
+
+                <ImageView
+                    android:id="@+id/imgPhoneRestaurant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/ic_phone_white_24dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/blockExtra"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/card_paddingBottom" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/detail_paddingLeft"
+                android:paddingRight="@dimen/detail_paddingRight">
+
+                <ImageView
+                    android:id="@+id/imgHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_client_white_24dp" />
+
+                <TextView
+                    android:id="@+id/customer_name"
+                    style="@style/titleAvenirFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imgHome"
+                    android:text="@string/customer_name" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/hour_order"
+                    android:src="@drawable/ic_pedidos_horapedido" />
+
+                <TextView
+                    android:id="@+id/hour_order"
+                    style="@style/secondTitleAvenirFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:background="@color/colorAccent"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/detail_paddingLeft"
+                android:paddingRight="@dimen/detail_paddingRight">
+
+                <TextView
+                    android:id="@+id/customer_direction"
+                    style="@style/secondmapFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="52dp"
+                    android:layout_marginStart="52dp"
+                    android:text="@string/direction_customer" />
+
+                <ImageView
+                    android:id="@+id/imgPhoneCustomer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/ic_phone_white_24dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/blockExtra2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/card_paddingBottom" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/detail_paddingLeft"
+                android:paddingRight="@dimen/detail_paddingRight">
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/detail_paddingLeft"
+                android:paddingRight="@dimen/detail_paddingRight">
+
+                <TextView
+                    android:id="@+id/comments"
+                    style="@style/secondTitleAvenirFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/detail_paddingBottom"
+                    android:paddingRight="@dimen/detail_paddingRight"
+                    android:paddingTop="@dimen/detail_paddingTop"
+                    android:text="@string/customer_observation" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp"
+                    android:id="@+id/imgbtn_obs_client"
+                    android:background="@color/colorAccent"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/blockExtra3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/card_paddingBottom" />
+            <RelativeLayout
+                android:id="@+id/notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/detail_paddingLeft"
+                android:paddingRight="@dimen/detail_paddingRight">
+
+                <TextView
+                    android:id="@+id/incidents"
+                    style="@style/secondTitleAvenirFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/detail_paddingBottom"
+                    android:paddingRight="@dimen/detail_paddingRight"
+                    android:paddingTop="@dimen/detail_paddingTop"
+                    android:text="@string/customer_incident" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp"
+                    android:id="@+id/imgbtn_problems_client"
+                    android:background="@color/colorAccent"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/blockExtra4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/card_paddingBottom" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/detail_paddingLeft"
+                android:paddingRight="@dimen/detail_paddingRight">
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/colorAccent"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/detail_paddingBottom"
+                android:paddingLeft="@dimen/detail_paddingLeft"
+                android:paddingRight="@dimen/detail_paddingRight"
+                android:paddingTop="@dimen/detail_paddingTop">
+
+                <Button
+                    android:id="@+id/accept"
+                    style="@style/thirdTitleAvenirFont_Rose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/card_paddingLeft"
+                    android:background="@color/white"
+                    android:paddingLeft="@dimen/card_paddingLeft"
+                    android:paddingRight="@dimen/card_paddingRight"
+                    android:text="@string/button_income" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_weight="0.5">
+
+                    <ImageButton
+                        android:id="@+id/cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/colorAccent"
+                        android:src="@drawable/ic_cancel_white_24dp" />
+
+                    <ImageButton
+                        android:id="@+id/btnincidencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/colorAccent"
+                        android:src="@drawable/ic_warning_white_24dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
