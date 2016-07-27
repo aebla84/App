@@ -106,7 +106,7 @@ public class OrderIncidenciasFragment extends Fragment implements RetrofitDelega
         et_addcomment = (EditText)view.findViewById(R.id.write_comment);
         btnSaveComment = (ImageButton)view.findViewById(R.id.send_comment);
         sp_typeOfProblem = (Spinner)view.getRootView().findViewById(R.id.problems_spinner);
-
+        strTypeOfProblem = String.valueOf(sp_typeOfProblem.getSelectedItem());
 
 
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -129,8 +129,8 @@ public class OrderIncidenciasFragment extends Fragment implements RetrofitDelega
         btnSaveComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                strTypeOfProblem = String.valueOf(sp_typeOfProblem.getSelectedItem());
                 if(validate()) {
-                    strTypeOfProblem = String.valueOf(sp_typeOfProblem.getSelectedItem());
                     lstincidencias = new ArrayList<Incidencia>();
                     Incidencia incidenciaObj = new Incidencia();
                     incidenciaObj.setPosition("0");

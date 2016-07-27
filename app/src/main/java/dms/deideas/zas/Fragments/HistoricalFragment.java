@@ -144,6 +144,11 @@ public class HistoricalFragment extends Fragment implements View.OnClickListener
         if (body!=null && body.getOrders() != null) {
             adapter.add(body.getOrders());
         }
+        else
+        {
+            int lengthLong = Toast.LENGTH_LONG;
+            Toast.makeText(view.getContext(),"NO HAY FINALIZADOS", lengthLong);
+        }
 
     }
 

@@ -52,7 +52,8 @@ public class HistoricalAdapter extends RecyclerView.Adapter<HistoricalAdapter.Hi
         holder.card.setTag(position);
         holder.idorder.setText(String.valueOf(orders.get(position).getId()));
         //holder.state.setText(getOrderStatusName(holder.state.getContext(), orders.get(position).getOrderstatus()));
-        holder.day.setText(utils.convertFormatDate(orders.get(position).getCompleted_at().substring(0,10)));
+        //String data = utils.convertFormatDate(orders.get(position).getCompleted_at().substring(0,10));
+        holder.day.setText(orders.get(position).getCompleted_at().substring(0,10));
         holder.money.setText(orders.get(position).getTotal());
     }
 
